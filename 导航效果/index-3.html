@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>nav</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .menu {
+            width: 700px;
+            height: 40px;
+            background: black;
+            color: #fff;
+            list-style-type: none;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .menu>li {
+            display: inline-block;
+            height: 40px;
+            line-height: 40px;
+            margin-right: 5px;
+            padding: 0 15px;
+            text-align: center;
+            position: relative;
+            transition-property: all;
+            transition-duration: 0.5s;
+            transition-timing-function: ease-out;
+        }
+
+        .menu>li:hover {
+            background: #333;
+        }
+
+        .menu>li:hover .second-menu {
+            display: block;
+            height: auto;
+
+        }
+
+        .menu .second-menu {
+            height: 0;
+            position: absolute;
+            top: 40px;
+            left: -15px;
+            transition-property: all;
+            transition-duration: 1s;
+            transition-timing-function: ease-out;
+            overflow: hidden;
+        }
+
+        .menu .second-menu>li {
+            width: 100px;
+            background: #000;
+            transition-property: all;
+            transition-duration: 0.5s;
+            transition-timing-function: ease-out;
+        }
+
+        .menu .second-menu>li:hover {
+            background: #333;
+            font-weight: 700;
+        }
+
+    </style>
+</head>
+<body>
+    <ul class="menu">
+        <li><a href="">Home</a></li>
+        <li>
+            <span>Item A</span>
+            <ul class="second-menu">
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+        </li>
+        <li>
+            <span>Item B</span>
+            <ul class="second-menu">
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+        </li>
+        <li>
+            <span>Item C</span>
+            <ul class="second-menu">
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+        </li>
+        <li>About</li>
+        <li>Me</li>
+    </ul>
+</body>
+</html>

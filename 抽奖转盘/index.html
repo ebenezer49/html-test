@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>转盘</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #aaa;
+        }
+
+        #zhuanpan {
+            width: 500px;
+            height: 500px;
+            margin: 100px auto;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #zhuanpan>img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+
+        #zhuanpan>.point {
+            width: 240px;
+            height: 26px;
+            background: url(指针.png) no-repeat;
+            background-size: 100% 100%;
+            position: absolute;
+            top: 238px;
+            left: 53px;
+            transform-origin: 81.27% 50%;
+            transition: transform 3s;
+        }
+
+        /*#zhuanpan:hover .point {
+            animation: run 3s;
+        }
+
+        @keyframes run {
+            0% {
+
+            }
+            100% {
+                transform: rotate(820deg);
+                transition: transform 3s;
+            }
+        }*/
+    </style>
+    <script type="text/javascript">
+    window.onload = function() {
+        var zhuanpan = document.getElementById('zhuanpan');
+        var zhizhen = zhuanpan.querySelector('.point');
+
+        zhuanpan.onclick = function() {
+            var reg = /\d+\.?\d+/;
+            var d = Math.floor(Math.random() * 360) + 360;
+            if (zhizhen.style.transform) {
+                var old_d = parseInt(reg.exec(zhizhen.style.transform));
+                d += Math.floor(old_d / 360) * 360;
+            }
+            console.log(`here ${d}`);
+            zhizhen.style.transform = `rotate(${d}deg)`;
+        }
+    }
+    </script>
+</head>
+<body>
+    <div id="zhuanpan">
+        <img src="zhuanpan.jpg">
+        <div class="point"></div>
+    </div>
+</body>
+</html>

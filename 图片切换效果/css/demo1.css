@@ -1,0 +1,120 @@
+.cr-container>.cr-bgimg>div>span {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  color: rgba(0, 0, 0, .0);
+}
+
+
+/* .cr-container>#select-img-1:checked~.cr-bgimg, */
+
+.cr-container>.cr-bgimg>div>span:nth-child(1) {
+  background: url("../images/1.jpg");
+}
+
+
+/* .cr-container>#select-img-2:checked~.cr-bgimg, */
+
+.cr-container>.cr-bgimg>div>span:nth-child(2) {
+  background: url("../images/2.jpg");
+}
+
+
+/* .cr-container>#select-img-3:checked~.cr-bgimg, */
+
+.cr-container>.cr-bgimg>div>span:nth-child(3) {
+  background: url("../images/3.jpg");
+}
+
+
+/* .cr-container>#select-img-4:checked~.cr-bgimg, */
+
+.cr-container>.cr-bgimg>div>span:nth-child(4) {
+  background: url("../images/4.jpg");
+}
+
+.cr-container>.cr-bgimg>div:nth-child(1) span {
+  background-position-x: 0;
+}
+
+.cr-container>.cr-bgimg>div:nth-child(2) span {
+  background-position-x: -100%;
+}
+
+.cr-container>.cr-bgimg>div:nth-child(3) span {
+  background-position-x: -200%;
+}
+
+.cr-container>.cr-bgimg>div:nth-child(4) span {
+  background-position-x: -300%;
+}
+
+.cr-container>.cr-bgimg>div>span {
+  left: -150px;
+  -webkit-transition: left .5s ease-in-out;
+  -moz-transition: left .5s ease-in-out;
+  transition: left .5s ease-in-out;
+}
+
+.cr-container>input:checked~.cr-bgimg>div>span {
+  animation: slideOut 0.5s ease-in-out;
+}
+
+@keyframes slideOut {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.cr-container>#select-img-1:checked~.cr-bgimg>div>span:nth-child(1),
+.cr-container>#select-img-2:checked~.cr-bgimg>div>span:nth-child(2),
+.cr-container>#select-img-3:checked~.cr-bgimg>div>span:nth-child(3),
+.cr-container>#select-img-4:checked~.cr-bgimg>div>span:nth-child(4) {
+  z-index: 10;
+  left: 0px;
+  animation: none;
+}
+
+
+/* 图片题目 */
+
+.cr-container>.cr-title>h3 {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  opacity: 0;
+  -webkit-transition: opacity 0.8s ease-in-out;
+  -moz-transition: opacity 0.8s ease-in-out;
+  transition: opacity 0.8s ease-in-out;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.cr-container>.cr-title>h3>span:first-child {
+  display: block;
+  font-family: "BebasNeue-webfont";
+  font-size: 70px;
+  letter-spacing: 7px;
+}
+
+.cr-container>.cr-title>h3>span:last-child {
+  display: block;
+  font-style: italic;
+  font-size: 14px;
+  background-color: rgba(104, 171, 194, 0.9);
+  padding: 10px;
+}
+
+.cr-container>#select-img-1:checked~.cr-title>h3:nth-child(1),
+.cr-container>#select-img-2:checked~.cr-title>h3:nth-child(2),
+.cr-container>#select-img-3:checked~.cr-title>h3:nth-child(3),
+.cr-container>#select-img-4:checked~.cr-title>h3:nth-child(4) {
+  opacity: 1;
+}
+

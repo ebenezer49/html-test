@@ -1,0 +1,169 @@
+body {
+    background-color: #ffffff;
+}
+
+/* header */
+.header-logo {
+    margin-top: 38px;
+    float: left;
+}
+.nav {
+    float: right;
+    margin-top: 48px;
+}
+.nav .item {
+    float: left;
+    margin-left: 40px;
+    font-size: 0.875em;
+    color: #3b3b3b;
+}
+
+/* board */
+.board {
+    position: relative;
+    width: 100%;
+    height: 570px;
+    color: #ffffff;
+    overflow: hidden;
+}
+.board .board-bg {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.board .board-bg .img {
+    width: 100%;
+    height: 100%;
+    background: url('../images/board.png') no-repeat;
+    background-position: 0 -110px;
+}
+.board .board-bg .mark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.75);
+}
+.board .caption {
+    position: absolute;
+    top: 210px;
+    width: 100%;
+}
+.board .caption .middle {
+    width: 776px;
+    text-align: center;
+}
+.board .caption .small-text {
+    margin-top: 16px;
+    font-size: 1em;
+}
+.board .caption .line {
+    display: inline-block;
+    width: 40px;
+    height: 1px;
+    background-color: #ffffff;
+    vertical-align: middle;
+}
+.board .caption .left {
+    margin-right: 24px;
+}
+.board .caption .right {
+    margin-left: 24px;
+}
+
+/* menu */
+.menu {
+    position: relative;
+    width: 100%;
+    height: 700px;
+}
+.menu .middle {
+    position: relative;
+    width: 1100px;
+    padding-top: 1px;             /* 防止内部div margin-top 坍塌 */
+}
+.menu .title {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 154px;
+    height: 74px;
+    margin-left: -77px;
+    background-color: #f34949;
+    color: #ffffff;
+    font-size: 1.125em;
+    line-height: 64px;
+    text-align: center;
+}
+.menu .title:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    border-top: 64px solid transparent;
+    border-left: 77px solid transparent;
+    border-right: 77px solid transparent;
+    border-bottom: 10px solid #ffffff;;
+}
+.menu .list {
+    position: relative;
+    margin-top: 154px;
+}
+.menu .list .item {
+    position: relative;
+    width: 492px;
+    margin-bottom: 60px;
+}
+.menu .item:nth-of-type(odd) {
+    float: left;
+}
+.menu .item:nth-of-type(even) {
+    float: right;
+}
+.menu .item .name .price {
+    display: block;
+    max-width: 190px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 0.875em;
+    margin-right: 40px;
+    color: #555555;
+}
+.menu .item .name {
+    float: left;
+}
+.menu .item .price {
+    float: right;
+}
+.menu .item .line {
+    display: block;
+    max-width: 100%;
+    height: 1px;
+    float: left;
+    margin-left: 40px;
+    margin-right: 40px;
+    background-color: #e3e1e1;
+}
+
+
+/* footer */
+.address, .links, .copy-right {
+    float: left;
+    margin-top: 100px;
+    margin-right: 58px;
+    width: 230px;
+    font-size: 0.875em;
+}
+.address span {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.links li {
+    margin-bottom: 12px;
+}
+.copy-right {
+    margin-right: 0;
+
+}

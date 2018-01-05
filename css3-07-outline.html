@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>outline 不占空间</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #div-1 {
+            height: 300px;
+        }
+
+        #div-1>div {
+            width: 20%;
+            height: 200px;
+            background: blue;
+            margin: 10px 10px;
+            float: left;
+        }
+
+        #div-1>div:hover {
+            border: 10px solid #777;
+        }
+
+        #div-2 {
+            height: 300px;
+        }
+
+        #div-2>div {
+            width: 20%;
+            height: 200px;
+            background: blue;
+            margin: 10px 10px;
+            float: left;
+        }
+
+        #div-2>div:hover {
+            outline: 10px solid #777;
+        }
+    </style>
+</head>
+<body>
+    border 边框
+    <div id="div-1">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <br>
+
+    outline 边框(不占空间)
+    <div id="div-2">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>

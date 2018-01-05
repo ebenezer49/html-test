@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Css 圣杯布局</title>
+    <style>
+        .container {
+            width: 700px;
+            border: 2px solid #000000;
+            text-align: center;
+        }
+        .center {
+            margin: 0 auto;
+        }
+        .clear-float {
+            *zoom: 1;   /* 兼容IE7 */
+        }
+        .clear-float:after{
+            display: block;
+            content: "";
+            clear: both;
+            visibility: hidden;
+        }
+        .top, .bottom {
+            background-color: #666666;
+        }
+        .main {
+            padding-left: 100px;
+            padding-right: 150px;
+            overflow: hidden;
+        }
+        .left, .middle, .right {
+            position: relative;
+            padding-bottom: 2000px;
+            margin-bottom: -2000px;
+        }
+        .left {
+            float: left;
+            width: 100px;
+            left: -100px;
+            background-color: #F09B73;
+        }
+        .middle {
+            float: left;
+            width: 100%;
+            margin-left: -100px;
+            background-color: #D5D5D5;
+        }
+        .right {
+            float: left;
+            width: 150px;
+            margin-left: -150px;
+            right: -150px;
+            background-color: #64BCD9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container center">
+        <div class="top">=== Top ===</div>
+        <div class="main clear-float">
+            <div class="left">Left</div>
+            <div class="middle">Middle <br />  ...   </div>
+            <div class="right">Right</div>
+        </div>
+        <div class="bottom">=== Bottom ===</div>
+    </div>
+</body>
+</html>

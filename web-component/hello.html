@@ -1,0 +1,32 @@
+<!-- 模板 -->
+<template id="hello-template">
+    <style>
+        h1 { color: red }
+    </style>
+    <h1>Hello web component!</h1>
+</template>
+
+<script>
+    // 指向导入文档, 即下面的index.html
+    var indexDoc = document;
+
+    // 指向被导入文档, 即当前文档hello.html
+    var helloDoc = (indexDoc._currentScript || indexDoc.currentScript).ownerElement;
+
+    // 获得上面的模板
+    var tmpl = helloDoc.querySelector('#hello-template');
+
+    // 创建一个新元素的原型,继承自 HTMLElement
+    var HelloProto = Object.create(HTMLElement.prototype);
+
+    // 设置 Shadow DOM 并将模板的内容克隆进去
+    HelloProto.createdCallback = function() {
+        var root = this.createShadowRoot();
+        root.appendChild(indexDoc.importNode(tmpl.content, true));
+    }
+
+    // 注册新元素
+    var Hello = indexDoc.registerElement('hello-component', {
+        prototype: HelloProto
+    });
+</script>

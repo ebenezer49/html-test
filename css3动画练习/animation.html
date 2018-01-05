@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body { background: #222222; margin-top: -250px; margin-left: -250px; }
+        section { 
+            position: relative; 
+            top: 0; 
+            width: 250px; 
+            height: 250px; 
+            float: left; 
+        }
+        summary { 
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            font-size: 48px;
+            transform: scale(0.3);color: #ffffff
+        }
+        div {
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            transform: scale(0.3);
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        br {
+            display: block;
+            clear: both;
+        }
+    </style>
+
+    <!-- 动画1 -->
+    <style>
+        .test-1>.outer {
+            background-image: url(./images/circle_outer.png);
+            animation: circle_outer1 10s linear  infinite;
+        }
+        .test-1>.middle {
+            background-image: url(./images/circle_middle.png);
+            animation: circle_middle1 10s linear infinite;
+        }
+        .test-1>.inner {
+            background-image: url(./images/circle_inner.png);
+            animation: circle_inner1 10s linear infinite;
+        }
+        .test-1>.imooc {
+            background-image: url(./images/imooc.png);
+        }
+        @keyframes circle_outer1 {
+            from { transform: scale(0.3) rotateZ(0deg); }
+            to   { transform: scale(0.3) rotateZ(360deg); }
+        }
+        @keyframes circle_middle1 {
+            from { transform: scale(0.3) rotateY(0deg); }
+            to   { transform: scale(0.3) rotateY(360deg); }
+        }
+        @keyframes circle_inner1 {
+            from { transform: scale(0.3) rotateX(0deg); }
+            to   { transform: scale(0.3) rotateX(360deg); }
+        }
+    </style>
+
+    <!-- 动画2(支持3D) -->
+    <style>
+        section[class="test-2"] {  transform-style: preserve-3d;   /* 支持3D */ }
+        .test-2>.outer {
+            background-image: url(./images/circle_outer.png);
+            animation: circle_outer1 10s linear infinite;
+        }
+        .test-2>.middle {
+            background-image: url(./images/circle_middle.png);
+            animation: circle_middle1 10s linear infinite;
+        }
+        .test-2>.inner {
+            background-image: url(./images/circle_inner.png);
+            animation: circle_inner1 10s linear infinite;
+        }
+        .test-2>.imooc {
+            background-image: url(./images/imooc.png);
+        }
+    </style>
+
+    <!-- 动画3 -->
+    <style>
+        .test-3>.outer {
+            background-image: url(./images/circle_outer.png);
+            animation: circle_outer1 10s 3s linear;
+        }
+        .test-3>.middle {
+            background-image: url(./images/circle_middle.png);
+            animation: circle_middle1 10s 3s linear;
+        }
+        .test-3>.inner {
+            background-image: url(./images/circle_inner.png);
+            animation: circle_inner1 10s 3s linear;
+        }
+        .test-3>.imooc {
+            background-image: url(./images/imooc.png);
+        }
+    </style>
+
+    <!-- 动画4 -->
+    <style>
+        .test-4>.outer {
+            background-image: url(./images/circle_outer.png);
+            animation: circle_outer1 10s linear reverse infinite;
+        }
+    
+        .test-4>.middle {
+            background-image: url(./images/circle_middle.png);
+            animation: circle_middle1 10s linear reverse infinite;
+        }
+    
+        .test-4>.inner {
+            background-image: url(./images/circle_inner.png);
+            animation: circle_inner1 10s linear reverse infinite;
+        }
+    
+        .test-4>.imooc {
+            background-image: url(./images/imooc.png);
+        }
+    </style>
+
+    <!-- 动画5 -->
+    <style>
+        .test-5>.outer {
+            background-image: url(./images/circle_outer.png);
+            animation: circle_outer1 10s linear alternate infinite;
+        }
+        .test-5>.middle {
+            background-image: url(./images/circle_middle.png);
+            animation: circle_middle1 10s linear alternate infinite;
+        }
+        .test-5>.inner {
+            background-image: url(./images/circle_inner.png);
+            animation: circle_inner1 10s linear alternate infinite;
+        }
+        .test-5>.imooc {
+            background-image: url(./images/imooc.png);
+        }
+    </style>
+
+    <!-- 动画6(fill-mode) -->
+    <style>
+        .test-6>.outer {
+            background-image: url(./images/circle_outer.png);
+            animation: circle_outer6 3s linear alternate;
+            /* 动画结束时状态 */
+            animation-fill-mode: forwards; 
+        }
+        .test-6>.middle {
+            background-image: url(./images/circle_middle.png);
+            animation: circle_middle6 3s linear alternate;
+            /* 动画开始时状态 */
+            animation-fill-mode: backwards;
+        }
+        .test-6>.inner {
+            background-image: url(./images/circle_inner.png);
+            animation: circle_inner6 3s linear alternate;
+            animation-fill-mode: both;
+        }
+        .test-6>.imooc {
+            background-image: url(./images/imooc.png);
+        }
+        @keyframes circle_outer6 {
+            from { transform: scale(0.3) rotateZ(0deg); }
+            to   { transform: scale(0.3) rotateZ(60deg); }
+        }
+        @keyframes circle_middle6 {
+            from { transform: scale(0.3) rotateY(0deg); }
+            to   { transform: scale(0.3) rotateY(60deg); }
+        }
+        @keyframes circle_inner6 {
+            from { transform: scale(0.3) rotateX(0deg); }
+            to   { transform: scale(0.3) rotateX(60deg); }
+        }
+    </style>
+
+    <!-- 动画7(play-state) -->
+    <style>
+        .test-7>.outer {
+            background-image: url(./images/circle_outer.png);
+            animation: circle_outer1 10s linear alternate infinite;
+            animation-play-state: paused;
+        }
+        .test-7>.middle {
+            background-image: url(./images/circle_middle.png);
+            animation: circle_middle1 10s linear alternate infinite;
+            animation-play-state: paused;
+        }
+        .test-7>.inner {
+            background-image: url(./images/circle_inner.png);
+            animation: circle_inner1 10s linear alternate infinite;
+            animation-play-state: paused;
+        }
+        .test-7>.imooc {
+            background-image: url(./images/imooc.png);
+        }
+        .test-7>.outer:hover {
+            animation-play-state: running;
+            cursor: pointer;
+            /* wile-change 渲染优化(GPU) */
+            will-change: transform;
+        }
+    </style>
+
+    <!-- 动画8(keyframes) -->
+    <style>
+        .test-8>.outer {
+            background-image: url(./images/circle_outer.png);
+            animation: circle_outer8 10s linear  infinite;
+        }
+        .test-8>.middle {
+            background-image: url(./images/circle_middle.png);
+            animation: circle_middle8 10s linear infinite;
+        }
+        .test-8>.inner {
+            background-image: url(./images/circle_inner.png);
+            animation: circle_inner8 10s linear infinite;
+        }
+        .test-8>.imooc {
+            background-image: url(./images/imooc.png);
+        }
+        @keyframes circle_outer8 {
+            0%   { transform: scale(0.3) rotateZ(0deg); }
+            25%  { transform: scale(0.3) rotateZ(180deg); }
+            100% { transform: scale(0.3) rotateZ(380deg); }
+        }
+        @keyframes circle_middle8 {
+            from { transform: scale(0.3) rotateY(0deg); }
+            to   { transform: scale(0.3) rotateY(360deg); }
+        }
+        @keyframes circle_inner8 {
+            from { transform: scale(0.3) rotateX(0deg); }
+            to   { transform: scale(0.3) rotateX(360deg); }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="test-1">
+        <summary>动画1</summary>
+        <div class="outer"></div>
+        <div class="middle"></div>
+        <div class="inner"></div>
+        <div class="imooc"></div>
+    </section>
+
+    <section class="test-2">
+        <summary>动画2(支持3D)</summary>
+        <div class="outer"></div>
+        <div class="middle"></div>
+        <div class="inner"></div>
+        <div class="imooc"></div>
+    </section>
+
+    <section class="test-3">
+        <summary>动画3(延迟)</summary>
+        <div class="outer"></div>
+        <div class="middle"></div>
+        <div class="inner"></div>
+        <div class="imooc"></div>
+    </section>
+
+    <section class="test-4">
+        <summary>动画4(反方向)</summary>
+        <div class="outer"></div>
+        <div class="middle"></div>
+        <div class="inner"></div>
+        <div class="imooc"></div>
+    </section>
+
+    <br>
+
+    <section class="test-5">
+        <summary>动画5(交替)</summary>
+        <div class="outer"></div>
+        <div class="middle"></div>
+        <div class="inner"></div>
+        <div class="imooc"></div>
+    </section>
+
+    <section class="test-6">
+        <summary>动画6(fill-mode)</summary>
+        <div class="outer"></div>
+        <div class="middle"></div>
+        <div class="inner"></div>
+        <div class="imooc"></div>
+    </section>
+
+    <section class="test-7">
+        <summary>动画7(paly-state)</summary>
+        <div class="outer"></div>
+        <div class="middle"></div>
+        <div class="inner"></div>
+        <div class="imooc"></div>
+    </section>
+
+    <section class="test-8">
+        <summary>动画8(keyframes)</summary>
+        <div class="outer"></div>
+        <div class="middle"></div>
+        <div class="inner"></div>
+        <div class="imooc"></div>
+    </section>
+    
+</body>
+
+</html>

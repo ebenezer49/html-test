@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>css3-03</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        h1 {
+            /* 4%的屏幕宽度 */
+            font-size: 4vw;
+        }
+
+        #intro {
+            height: 350px;
+        }
+
+        #intro>p {
+            width: 300px;
+            height: 150px;
+            border: 2px solid red;
+            float: left;
+            margin: 5px;
+        }
+
+        #intro>p:nth-of-type(1) {
+            overflow: hidden;
+        }
+
+        #intro>p:nth-of-type(2) {
+            overflow: auto;
+        }
+
+        #intro>p:nth-of-type(3) {
+            overflow: hidden;
+            /* 强制不换行 */
+            white-space: nowrap;
+        }
+
+        #intro>p:nth-of-type(4) {
+            overflow: hidden;
+            white-space: nowrap;
+            /* 使用省略号 */
+            text-overflow: ellipsis;
+        }
+
+        #shadow {
+            height: 90px;
+        }
+
+        #shadow>p {
+            margin: 10px 80px;
+            float: left;
+        }
+
+        #shadow>p:nth-of-type(1) {
+            text-shadow: 0 0 10px red;
+            box-shadow: 0 0 20px 0px blue;
+        }
+
+        #shadow>p:nth-of-type(2) {
+            text-shadow: 10px 0 10px red;
+            box-shadow: 0 0 0px 10px blue;
+        }
+
+        #shadow>p:nth-of-type(3) {
+            text-shadow: 0 10px 10px red;
+            box-shadow: 0 0 20px 10px blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>自适应文字大小</h1>
+    <div id="intro">
+        <p>
+            后盾网曾经的一元课堂成为了网站开发爱好者必看的入门教程，就在今天，一元课堂主讲孙琪峥老师最新录制的网站开发前端零基础入门视频教程开始更新啦！内容会包含html、div+css、JavaScript、jquery、html5、css3...等，孙琪峥老师人送外号“小白杀手”，幽默风趣的讲课风格，深受学生们的喜爱！
+
+        </p>
+        <p>
+            后盾网曾经的一元课堂成为了网站开发爱好者必看的入门教程，就在今天，一元课堂主讲孙琪峥老师最新录制的网站开发前端零基础入门视频教程开始更新啦！内容会包含html、div+css、JavaScript、jquery、html5、css3...等，孙琪峥老师人送外号“小白杀手”，幽默风趣的讲课风格，深受学生们的喜爱！
+
+        </p>
+        <p>
+            后盾网曾经的一元课堂成为了网站开发爱好者必看的入门教程，就在今天，一元课堂主讲孙琪峥老师最新录制的网站开发前端零基础入门视频教程开始更新啦！内容会包含html、div+css、JavaScript、jquery、html5、css3...等，孙琪峥老师人送外号“小白杀手”，幽默风趣的讲课风格，深受学生们的喜爱！
+
+        </p>
+        <p>
+            后盾网曾经的一元课堂成为了网站开发爱好者必看的入门教程，就在今天，一元课堂主讲孙琪峥老师最新录制的网站开发前端零基础入门视频教程开始更新啦！内容会包含html、div+css、JavaScript、jquery、html5、css3...等，孙琪峥老师人送外号“小白杀手”，幽默风趣的讲课风格，深受学生们的喜爱！
+
+        </p>
+    </div>
+    <div id="shadow">
+        <p>字体阴影效果</p>
+        <p>字体阴影效果</p>
+        <p>字体阴影效果</p>
+    </div>
+</body>
+</html>

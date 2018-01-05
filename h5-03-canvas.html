@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>canvas</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background: #eee;
+        }
+        #my-canvas {
+            background: #fff;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function() {
+            var canvas = document.getElementById('my-canvas');
+            var cxt = canvas.getContext('2d');
+
+            // 矩形绘制
+            // cxt.fillStyle = '#f00';
+            // cxt.fillRect(50, 50, 50, 50);
+            // cxt.strokeStyle = '#0f0';
+            // cxt.strokeRect(100, 100, 25, 25);
+            // cxt.clearRect(75, 75, 20, 20);
+
+            // 直线绘制
+            cxt.beginPath();
+            cxt.moveTo(200, 200);
+            cxt.lineTo(100, 200);
+            cxt.lineTo(5, 5);
+            cxt.strokeStyle = '#00f';   // 线条颜色
+            cxt.lineWight = 10;         // 线条粗细
+            cxt.lineJoin = 'round';     // 拐角
+            cxt.stroke();
+
+        }
+    </script>
+</head>
+<body>
+    <!-- 宽与高只能在这里设置 -->
+    <canvas id="my-canvas" width="900px" height="500px">
+        your browser does not support the canvas element.
+    </canvas>
+</body>
+</html>

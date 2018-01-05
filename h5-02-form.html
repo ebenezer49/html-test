@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>h5-02</title>
+    <script type="text/javascript">
+        window.onload = function() {
+            var range = document.querySelector('input[type=range]');
+            var color = document.querySelector('input[type=color]');
+
+            range.onchange = function() {
+                console.log(`range: ${this.value}`);
+            }
+
+            color.onchange = function() {
+                console.log(`color: ${this.value}`);
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- svg矢量图 -->
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="200">
+       <polygon points="100,10 40,180 190,60 10,60 160,180"
+       style="fill:red;stroke:blue;stroke-width:3;" />
+    </svg>
+
+    <form id="my-form" action="" method="post" onsubmit="return false" >
+        Email:<input type="email" name="email" list="email-list"><br><br>
+        Url:<input type="url" name="url" autofocus><br><br>
+        Number:<input type="number" name="number" max="3" min="1" step="1" value="3"><br><br>
+        Range:<input type="range" name="range" max="10" min="5" value="7"><br><br>
+        Date pickers:<input type="datetime-local" name="date"><br><br>
+        Search:<input type="search" name="search"><br><br>
+        Color:<input type="color" name="color"><br><br>
+        <input type="submit" value="提交">
+
+        <!-- datalist 元素规定输入域的选项列表 -->
+        <datalist id="email-list">
+            <option label="163-email" value="qixiyi@yeah.net"></option>
+            <option label="qq-email" value="693037591@qq.com"></option>
+        </datalist>
+    </form>
+
+
+    用户:<input type="text" name="" form="my-form" placeholder=Simeon><br><br>
+    四个数字:<input type="text" name="c" pattern="^\d{4}$" form="my-form" required><br><br>
+    上传多文件: <input type="file" name="files" multiple><br><br>
+</body>
+</html>

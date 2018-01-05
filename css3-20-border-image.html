@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Border-image</title>
+    <style>
+        div[class^="test"] {
+            padding: 20px;
+        }
+    
+        div[class^="test"]:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        div[class^="box"] {
+            width: 140px;
+            height: 80px;
+            border: 50px solid;
+            margin: 10px;
+            float: left;
+            line-height: 80px;
+            text-align: center;
+            color: #ffffff;
+            background-color: green;
+            border-image-source: url('http://img1.3lian.com/img2013/1/33/d/61.jpg');
+        }
+    </style>
+
+    <style>
+        .test-1>div.box-1 {
+        }
+        .test-1>div.box-2 {
+            border-image-slice: 10%;
+        }
+        .test-1>div.box-3 {
+            border-image-slice: 20%;
+        }
+        .test-1>div.box-4 {
+            border-image-slice: 40%;
+        }
+    </style>
+
+    <style>
+        .test-2>div.box-1 {}
+    
+        .test-2>div.box-2 {
+            border-image-slice: 10%;
+            border-image-width: 10%;
+        }
+    
+        .test-2>div.box-3 {
+            border-image-slice: 20%;
+        }
+    
+        .test-2>div.box-4 {
+            border-image-slice: 40%;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-1">
+        <summary>border-image-slice</summary>
+        <div class="box-1">
+            Box-1
+        </div>
+        <div class="box-2">
+            Box-2
+        </div>
+        <div class="box-3">
+            Box-3
+        </div>
+        <div class="box-4">
+            Box-4
+        </div>
+    </div>
+
+    <div class="test-2">
+        <div class="box-1">
+            Box-1
+        </div>
+        <div class="box-2">
+            Box-2
+        </div>
+        <div class="box-3">
+            Box-3
+        </div>
+        <div class="box-4">
+            Box-4
+        </div>
+    </div>
+</body>
+</html>

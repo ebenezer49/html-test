@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>验证码</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function() {
+            var canvas = document.getElementById('verify-code');
+            var cxt = canvas.getContext('2d');
+
+            cxt.fillStyle = '#000';
+            cxt.fillRect(0, 0, 500, 200);
+
+            cxt.font = '70px 微软雅黑';
+            cxt.fillStyle = '#fff';
+            cxt.fillText('1234', 75, 90);
+
+            /*
+                allData = [
+                    r, g, b, a,
+                    r, g, b, a,
+                    r, g, b, a,
+                    ...
+                ]
+             */
+            var allData = cxt.getImageData(0, 0, 500, 200);
+            var pointCount = allData.data.length / 4;
+            var num = 70000;
+            for (let i = 0; i < num; i ++) {
+                var index = Math.floor(Math.random() * pointCount) * 4;
+                allData.data[index] = Math.floor(Math.random()*256);
+                allData.data[index + 1] = Math.floor(Math.random()*256);
+                allData.data[index + 2] = Math.floor(Math.random()*256);
+            }
+            cxt.putImageData(allData, 0, 0);
+        }
+    </script>
+</head>
+<body>
+    <canvas id="verify-code"></canvas>
+</body>
+</html>

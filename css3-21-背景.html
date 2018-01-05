@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>背景</title>
+    <style>
+        div[class^="box"] {
+            width: 100px;
+            height: 80px;
+            margin: 7px;
+            padding: 20px;
+            float: left;
+            color: #ffffff;
+            background-color: yellowgreen;
+            border: 20px solid rgba(255,0,0,.3);
+        }
+        section:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+    </style>
+    <style>
+        .test-1>.box-1 { 
+        }
+        .test-1>.box-2 {
+            background-clip: border-box;
+        }
+        .test-1>.box-3 {
+            background-clip: padding-box;
+        }
+        .test-1>.box-4 {
+            background-clip: content-box;
+        }
+    </style>
+
+    <style>
+        /* 背景图起始位置 */
+        .test-2>.box-1 {
+            background: url('http://www.mypcera.com/star/u1/2006/03/17/20060317164622423733.jpg') no-repeat;
+        }
+        .test-2>.box-2 {
+            background: url('http://www.mypcera.com/star/u1/2006/03/17/20060317164622423733.jpg') no-repeat;
+            background-origin: border-box;
+        }
+        .test-2>.box-3 {
+            background: url('http://www.mypcera.com/star/u1/2006/03/17/20060317164622423733.jpg') no-repeat;
+            background-origin: padding-box;
+        }
+        .test-2>.box-4 {
+            background: url('http://www.mypcera.com/star/u1/2006/03/17/20060317164622423733.jpg') no-repeat;
+            background-origin: content-box;
+        }
+    </style>
+
+    <style>
+        /* 背景图大小 */
+        .test-3>.box-1 {
+            background: url('http://www.mypcera.com/star/u1/2006/03/17/20060317164622423733.jpg') no-repeat;
+        }
+        .test-3>.box-2 {
+            background: url('http://www.mypcera.com/star/u1/2006/03/17/20060317164622423733.jpg') no-repeat;
+            background-size: 100% auto;
+        }
+        .test-3>.box-3 {
+            background: url('http://www.mypcera.com/star/u1/2006/03/17/20060317164622423733.jpg') no-repeat;
+            background-size: auto 100%;
+        }
+        .test-3>.box-4 {
+            background: url('http://www.mypcera.com/star/u1/2006/03/17/20060317164622423733.jpg') no-repeat;
+            background-size: 100% 100%;
+        }
+        .test-3>.box-5 {
+            background: url('http://www.mypcera.com/star/u1/2006/03/17/20060317164622423733.jpg') no-repeat;
+            background-size: cover;
+        }
+        .test-3>.box-6 {
+            background: url('http://www.mypcera.com/star/u1/2006/03/17/20060317164622423733.jpg') no-repeat;
+            background-size: contain;
+        }
+    </style>
+
+    <style>
+        .test-4>.box-1 {
+            background-image: url('./bg.png'),url('http://www.mypcera.com/star/u1/2006/03/17/20060317164622423733.jpg');
+        }
+    </style>
+</head>
+
+<body>
+    <section class="test-1">
+        <summary>background-clip</summary>
+        <div class="box-1">Box-1</div>
+        <div class="box-2">Box-2(border-box)</div>
+        <div class="box-3">Box-3(padding-box)</div>
+        <div class="box-4">Box-4(content-box)</div>
+    </section>
+    
+    <section class="test-2">
+        <summary>background-origin</summary>
+        <div class="box-1">Box-1</div>
+        <div class="box-2">Box-2(border-box)</div>
+        <div class="box-3">Box-3(padding-box)</div>
+        <div class="box-4">Box-4(content-box)</div>
+    </section>
+
+    <section class="test-3">
+        <summary>background-size</summary>
+        <div class="box-1">Box-1</div>
+        <div class="box-2">Box-2</div>
+        <div class="box-3">Box-3</div>
+        <div class="box-4">Box-4</div>
+        <div class="box-5">Box-5</div>
+        <div class="box-6">Box-6</div>
+    </section>
+
+    <section class="test-4">
+        <summary>多重背景图</summary>
+        <div class="box-1">Box-1</div>
+    </section>
+</body>
+</html>

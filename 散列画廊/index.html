@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>散列画廊</title>
+    <link rel="stylesheet" href="./css/main.css"/>
+</head>
+<body>
+    <div class="wrap" id="wrap" onselectstart="return false">
+
+        <!-- 模板 -->
+        <div class="photo photo-front" onclick="turn(this)" id="photo_{{index}}">
+            <!-- 负责3D翻转 -->
+            <div class="photo-wrap">
+                <div class="side side-front">
+                    <p class="image"><img alt="" src="assets/{{image}}"></p>
+                    <p class="caption">{{caption}}</p>
+                </div>
+                <div class="side side-back">
+                    <p class="desc">{{desc}}</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

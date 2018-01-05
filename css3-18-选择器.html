@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>选择器</title>
+    <!-- 结构选择 -->
+    <style>
+        .test-1>div {
+            margin-left: 5px;
+        }
+        /* 选择直接后代 */
+        .test-1>.a>div {
+            color: red;
+        }
+        /* a-2的下一个紧邻兄弟 */
+        .test-1>.a-2+div{
+            color: blue;
+        }
+        /* a-2的下面所有兄弟 */
+        .test-1>.a-2~div{
+            color: yellow;
+        }
+    </style>
+
+    <!-- 属性选择 -->
+    <style>
+        .test-2>a[href] {
+            background-color: #000000;
+        }
+        .test-2>a[href="http://www.baidu.com"] {
+            background-color: #555555;
+        }
+        .test-2>a[class~="two"] {
+            background-color: #eeeeee;
+        }
+        .test-2>a[class*="tw"] {
+            background-color: red;
+        }
+    </style>
+
+    <!-- 伪类 -->
+    <style>
+        .test-3>a {
+            background-color: green;
+        }
+        .test-3>a:hover {
+            background-color: rgb(6, 0, 128);
+        }
+        .test-3>a:active {
+            background-color: rgb(128, 0, 43);
+        }
+        .test-3>a:visited {
+            background-color: rgb(127, 136, 127);
+        }
+        .test-3>input {
+            display: block;
+        }
+        .test-3>input:enabled {
+            background-color: greenyellow;
+        }
+        .test-3>input:disabled {
+            background-color: gold;
+        }
+    </style>
+
+    <!-- 否定选择器 -->
+    <style>
+        .test-4>nav {
+            font-size: 0;
+        }
+        .test-4>nav>a {
+            display: inline-block;
+            width: 50px;
+            text-align: center;
+            font-size: 18px;
+        }
+        .test-4>nav>a:not(:last-of-type) {
+            border-right: 1px solid #ff0000;
+        }
+    </style>
+
+    <!-- 伪元素 -->
+    <style>
+        .test-5>p {
+            width: 400px;
+            height: 200px;
+            overflow: auto;
+        }
+        .test-5>p:first-line {
+            color: green;
+        }
+        .test-5>p:first-letter {
+            font-size: 24px;
+        }
+    </style>
+
+    <!-- selection -->
+    <style>
+        .test-6>p {
+            width: 400px;
+            height: 200px;
+            overflow: auto;
+        }
+        .test-6>p::selection {
+            color: #ffffff;
+            background-color: yellowgreen;
+            cursor: pointer;
+            outline: #0920d3
+        }
+    </style>
+</head>
+<body>
+    <!-- 结构选择 -->
+    <details class="test-1">
+        <summary>结构选择</summary>
+        <div class="a">
+            A
+            <div class="a-1">
+                A(1)
+            </div>
+            <div class="a-2">
+                A(2)
+            </div>
+            <div class="a-3">
+                A(3)
+            </div>
+            <div class="a-4">
+                A(4)
+            </div>
+        </div>
+        <div class="b">B</div>
+    </details>
+
+    <!-- 属性选择 -->
+    <details class="test-2">
+        <summary>属性选择</summary>
+        <a href="http://www.baidu.com">1</a>
+        <a class="one two" href="http://www.baidu.com">2</a>
+        <a class="two" href="http://www.baidu.com">3</a>
+        <a class="two three" href="http://www.baidu.com">4</a>
+        <a href="http://www.baidu.com">5</a>
+    </details>
+
+    <!-- 伪类 -->
+    <details class="test-3">
+        <summary>伪类</summary>
+        <a class="" href="#">动态伪类</a>
+        <input type="search" name="search" value="状态伪类">
+        <input type="search" name="search" value="状态伪类" disabled>
+    </details>
+
+    <!-- 否定选择器 -->
+    <details class="test-4">
+        <summary>否定选择器</summary>
+        <nav>
+            <a href="#">One</a>
+            <a href="#">Two</a>
+            <a href="#">Three</a>
+            <a href="#">Four</a>
+            <a href="#">Five</a>
+        </nav>
+    </details>
+
+    <!-- 伪元素 -->
+    <details class="test-5">
+        <summary>伪元素</summary>
+        <p>
+            我父亲是个自学成才的曼陀林琴手，他是我们镇最优秀的弦乐演奏者之一。他看不懂乐谱，但是如果听几次曲子，他就能演奏出来。当他年轻一点的时候，他是一个小乡村乐队的成员。他们在当地舞厅演奏，有几次还为当地广播电台演奏。他经常告诉我们，自己如何试演，如何在佩茜?克莱恩作为主唱的乐队里占一席之位。他告诉家人，一旦被聘用就永不回头。父亲是一个很严谨的人，他讲述了他试演的那天，很多人在喝酒，咒骂，他不想呆在那种环境里。
+        </p>
+        <p>
+            My father was a self-taught mandolin player. He was one of the best string instrument players in our town. He could not read music, but if he heard a tune a few times, he could play it. When he was younger, he was a member of a small country music band. They would play at local dances and on a few occasions would play for the local radio station. He often told us how he had auditioned and earned a position in a band that featured Patsy Cline as their lead singer. He told the family that after he was hired he never went back. Dad was a very religious man. He stated that there was a lot of drinking and cursing the day of his audition and he did not want to be around that type of environment.
+        </p>
+    </details>
+
+    <!-- selection -->
+    <details class="test-6">
+        <summary>Selection</summary>
+        <p>
+            My father was a self-taught mandolin player. He was one of the best string instrument players in our town. He could not read music, but if he heard a tune a few times, he could play it. When he was younger, he was a member of a small country music band. They would play at local dances and on a few occasions would play for the local radio station. He often told us how he had auditioned and earned a position in a band that featured Patsy Cline as their lead singer. He told the family that after he was hired he never went back. Dad was a very religious man. He stated that there was a lot of drinking and cursing the day of his audition and he did not want to be around that type of environment.
+        </p>
+    </details>
+</body>
+</html>

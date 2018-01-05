@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>hello</title>
+    <style>
+        header,
+        footer {
+            background-color: #004a4a;
+            color: #ddd;
+            padding: 20px;
+            text-align: center;
+        }
+
+        aside {
+            padding-top: 10px;
+            font-weight: bold;
+        }
+
+        .title {
+            color: darkblue;
+        }
+
+        #orderedlist {
+            color: darkgreen;
+        }
+
+        nav {
+            background-color: #222;
+        }
+
+        section,
+        article {
+            padding: 10px;
+            background-color: #eee;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+        #test {
+            background-color: blueviolet;
+            height: 100px;
+            width: 100%;
+            border: 5px solid #999;
+            position: relative;
+            /* float: left; */
+            right: 50%;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            document.getElementById('tiemStemp').innerText = new Date().toLocaleTimeString();
+        }   
+    </script>
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header class="container-fluid">
+        <h1>This is a test!</h1>
+    </header>
+
+    <div id="test">
+        test
+    </div>
+
+    <!-- 导航栏 -->
+    <nav class="container-fluid">
+        <ul class="nav navbar-inverse navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="http://www.bing.com/search?q=amazingPlaces">Amazing Place</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- 内容,左右边栏 -->
+    <div class="container-fluid">
+        <div class="row">
+            <section class="col-sm-6 col-sm-push-3">
+                <article class="row">
+                    <h2>Amazing Museums</h2>
+                    <div class="col-sm-3">
+                        <img src="http://lorempixel.com/200/100/city/1" alt="" />
+                    </div>
+                    <div class="col-sm-9">
+                        <p>While most museums are a collection of old artifacts and stuff that no one is really intersted in
+                            seeing, our musuems are the best of the best.</p>
+                        <p>You won't find anything like these any where else in the world. Our museums rival that of out closest
+                            competitors including the Museum of Bad Art, the Paris Sewers Museum and th Museum of Broken
+                            relationships.
+                        </p>
+                        <p>Come check them out... the fun is waiting for you.</p>
+                    </div>
+                </article>
+
+                <article class="row">
+                    <h2>Amazing Museums</h2>
+                    <img class="col-sm-3" src="http://lorempixel.com/200/100/city/1" alt="" />
+                    <div class="col-sm-9">
+                        <p>While most museums are a collection of old artifacts and stuff that no one is really intersted in
+                            seeing, our musuems are the best of the best.</p>
+                        <p>You won't find anything like these any where else in the world. Our museums rival that of out closest
+                            competitors including the Museum of Bad Art, the Paris Sewers Museum and th Museum of Broken
+                            relationships.
+                        </p>
+                    </div>
+                </article>
+            </section>
+            <aside class="col-sm-3 col-sm-pull-6">
+                <h2 class="title">Things to Do</h2>
+                <ul>
+                    <li><a href="http://wwww.bing.com/search?q=hiking">Hiking</a></li>
+                    <li><a href="http://wwww.bing.com/search?q=Biking">Biking</a></li>
+                </ul>
+            </aside>
+            <aside class="col-sm-3">
+                <h2>How to Ger Here</h2>
+                <ol id="orderedlist">
+                    <li>By Plane</li>
+                    <li>By Train</li>
+                    <li>By Automoble</li>
+                    <li>By Boat</li>
+                </ol>
+            </aside>
+        </div>
+    </div>
+
+    <!-- 联系方式 -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 col-sm-push-3">
+                <a id="contact" href="#">Contact Us</a>
+                <p>Anytown Chamner of Commerce</p>
+                <p>123 Main St.</p>
+                <p>AnyTown, Oh 43210</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页底 -->
+    <footer class="container-fluid">
+        Copyright 2017
+        <p id="tiemStemp"></p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>transtison</title>
+    <style type="text/css">
+        /*
+            参考: (http://www.w3school.com.cn/cssref/pr_transition.asp)
+            transition: property duration timing-function delay;
+
+            规定设置过渡效果的 CSS 属性的名称
+            规定完成过渡效果需要多少秒或毫秒
+            规定速度效果的速度曲线
+            定义过渡效果何时开始
+        */
+        div[id^='div'] {
+            width: 100px;
+            height: 100px;
+            background: blue;
+            margin: 10px 10px;
+            transition: width 3s 0.2s;
+        }
+
+        div[id^='div']:hover {
+            width: 1000px;
+        }
+
+
+        #div-1 {
+            transition-timing-function: linear;
+        }
+
+        #div-2 {
+            /* 平滑过渡 慢-快-慢 */
+            transition-timing-function: ease;
+        }
+
+        #div-3 {
+            /* 由慢到快 */
+            transition-timing-function: ease-in;
+        }
+
+        #div-4 {
+            /* 由快到慢 */
+            transition-timing-function: ease-out;
+        }
+
+        #div-5 {
+            /* 慢-快-慢 */
+            transition-timing-function: ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div id="div-1"></div>
+    <div id="div-2"></div>
+    <div id="div-3"></div>
+    <div id="div-4"></div>
+    <div id="div-5"></div>
+</body>
+</html>

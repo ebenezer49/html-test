@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>input</title>
+    <style>
+        .test {
+            position: relative;
+            margin: 5px 7px;
+            padding: 7px 20px;
+        }
+        .test>::-webkit-inner-spin-button {
+            display: table-cell;
+        }
+        .test:nth-child(even) {
+            background-color: #c1c1c1;
+        }
+        .test>input:not([type="submit"]) {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- checkbox -->
+    <form class="test" autocomplete="off">
+        checkbox:
+        <input type="checkbox" name="cb1" value="1" >
+        <input type="checkbox" name="cb2" value="2" >
+        <input type="checkbox" name="cb3" value="3" required="required">
+        <input type="submit" value="提交">
+    </form>
+
+    <!-- radio -->
+    <form class="test" autocomplete="off">
+        radio:
+        <input type="radio" name="rd" value="1">
+        <input type="radio" name="rd" value="2">
+        <input type="radio" name="rd" value="3" required="required">
+        <input type="submit" value="提交">
+    </form>
+
+    <!-- search -->
+    <form class="test" autocomplete="off">
+        search:
+        <input type="search" name="search" value="" placeholder="请输入" required="required">
+        <input type="submit" value="提交">
+    </form>
+
+    <!-- search -->
+    <form class="test" autocomplete="off">
+        search: <input type="search" name="search" value="" placeholder="请输入" required="required">
+        <input type="submit" value="提交">
+    </form>
+
+    <!-- search autocomlete 默认为on -->
+    <!-- autofocus 适用所有input -->
+    <form class="test" autocomplete="on">
+        search(autocomplete):<input type="search" name="search" value="" autofocus="autofocus">
+        search(no-autocomplete):<input type="search" autocomplete="off" name="search" value="" autofocus="autofocus">
+        <input type="submit" value="提交">
+    </form>
+
+    <!-- url -->
+    <form class="test">
+        url: <input type="url" name="url" value="http://wwww.baidu.com">
+        <input type="submit" value="提交">
+    </form>
+
+    <!-- email -->
+    <form class="test">
+        email: <input type="email" name="email" value="qixiyi@yeah.net">
+        <input type="submit" value="提交">
+    </form>
+
+    <!-- tel -->
+    <form class="test">
+        tel: <input type="tel" name="tel" value="+86 84620027">
+        <input type="submit" value="提交">
+    </form>
+
+    <!-- number -->
+    <form class="test">
+        number: <input type="number" name="n" value="1234">
+        <input type="submit" value="提交">
+    </form>
+
+    <!-- range -->
+    <form class="test">
+        range: <input type="range" name="range" value="4" min="3" max="7">
+        <input type="submit" value="提交">
+    </form>
+
+    <!-- color -->
+    <form class="test">
+        color:
+        <input type="color" name="color" value="#ff0000">
+        <input type="submit" value="提交">
+    </form>
+
+    <!-- date -->
+    <form class="test">
+        date: <input type="date" name="date">
+        <input type="submit" value="提交">
+    </form>
+
+    <!-- month -->
+    <form class="test">
+        month: <input type="month" name="month" value="">
+        <input type="submit" value="提交">
+    </form>
+
+    <!-- week -->
+    <form class="test">
+        week: <input type="week" name="week" value="">
+        <input type="submit" value="提交">
+    </form>
+
+    <!-- time -->
+    <form class="test">
+        time: <input type="time" name="time" value="21:14">
+        <input type="submit" value="提交">
+    </form>
+
+    <!-- datetime -->
+    <form class="test">
+        datetime: <input type="datetime" name="dt" value="">
+        <input type="submit" value="提交">
+    </form>
+
+    <!-- datetime-local -->
+    <form class="test">
+        datetime-local: <input type="datetime-local" name="dt" value="">
+        <input type="submit" value="提交">
+    </form>
+
+    <!-- file -->
+    <form class="test">
+        file:<input type="file" name="file" value="">
+        file(multiple):<input type="file" name="file" value="" multiple="multiple">
+        <input type="submit" value="提交">
+    </form>
+
+    <!-- datalist -->
+    <form class="test">
+        datalist: <input type="text" name="phone" value="" list="phoneList">
+        <datalist id="phoneList">
+            <option value="iphone">iPhone</option>
+            <option value="htc">HTC</option>
+            <option value="xiaomi">XiaoMi</option>
+        </datalist>
+        <input type="submit" value="提交">
+    </form>
+
+    <form oninput="totalPrice.value=parseFloat(price.value)*parseInt(count.value)">
+        <input id="price" name="price" type="text" value="9.9"> *
+        <input id="count" name="count" type="number" value="100"> =
+        <output id="totalPrice">990</output>
+        <input type="submit" value="提交">
+    </form>
+
+</body>
+
+</html>

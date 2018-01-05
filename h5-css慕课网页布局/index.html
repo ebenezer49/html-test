@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>h5布局练习</title>
+    <link rel="stylesheet" type="text/css" href="./css/layout.css">
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+</head>
+<body>
+    <!-- 头部 -->
+    <header class="body-header">
+        <div class="container">
+            <a href="index.html"><img src="./images/logo.png" alt="logo"></a>
+            <nav>
+                <a href="index.html" class="active">Home</a>
+                <!-- 标明是外部链接 在新页面打开 语言为中文 -->
+                <a href="http://www.baidu.com" rel="external" hreflang="zh" target="_blank">Course</a>
+                <a href="#">Actual</a>
+                <a href="#">Plan</a>
+                <a href="#">FAQ</a>
+                <a href="#">Notes</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- banner -->
+    <section class="banner">
+        <ul>
+            <li class="active"><a href="#"><img src="./images/banner/banner1.jpg"></a></li>
+            <li class="right"><a href="#"><img src="./images/banner/banner2.jpg"></a></li>
+            <li class="left"><a href="#"><img src="./images/banner/banner3.jpg"></a></li>
+        </ul>
+    </section>
+
+    <!-- 主体 -->
+    <section class="main">
+        <div class="container">
+            <!-- 左边栏 -->
+            <aside class="recent-course">
+                <h1>Recent <samp>Course</samp></h1>
+                <dl>
+                    <dt>Hyper Text Markup Language</dt>
+                    <dd><img src="./images/Course/05_05.png" alt=""></dd>
+                    <dd>HTML is the standard markup language used to create web pages and its elements form the building blocks of all websites.</dd>
+                </dl>
+                <dl>
+                    <dt>Cascading Style Sheets</dt>
+                    <dd><img src="./images/Course/06_04.png" alt=""></dd>
+                    <dd>Cascading Style Sheets (CSS) is a simple mechanism for adding style (e.g., fonts, colors, spacing) to Web documents.</dd>
+                </dl>
+                <dl>
+                    <dt>JavaScript</dt>
+                    <dd><img src="./images/Course/09_07.png" alt=""></dd>
+                    <dd>JavaScript is a high-level, dynamic, untyped, and interpreted programming language.</dd>
+                </dl>
+                <dl>
+                    <dt>Angualr</dt>
+                    <dd><img src="./images/Course/02_09.png" alt=""></dd>
+                    <dd>Angular is an open-source web application framework mainly maintained by Google and by a community of individuals and it is very good!!!!!!!!!!!!!!!</dd>
+                </dl>
+            </aside>
+
+            <!-- 内容部分 -->
+            <article class="content">
+                <h1>Welcome to <samp>Massive Open Online Course!</samp></h1>
+                <p>We provide the latest knowledge to help you cope with the changing world!</p>
+                <p><img src="./images/article.jpg" alt=""></p>
+                <p>We hope that all the students who love the Internet can be more convenient access to learning resources, using the Internet
+                thinking to change our learning.</p>
+                <p>Focus on IT skills education MOOC, consistent with the development trend of the Internet down to earth's MOOC. We are free,
+                we only teach useful, we concentrate on education.</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- 底部 -->
+    <footer class="body-footer">
+        <div class="container">
+            <p class="copyright">Copyright © 2016 imooc.com All Rights Reserved.</p>
+            <p class="share">
+                <a href="#"><img src="./images/icon/weichat.png" alt=""></a>
+                <a href="#"><img src="./images/icon/qq.png" alt=""></a>
+                <a href="#"><img src="./images/icon/sina.png" alt=""></a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

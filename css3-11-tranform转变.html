@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>transform</title>
+    <style type="text/css">
+        div[class^="box"] {
+            width: 140px;
+            height: 70px;
+            margin: 7px;
+            padding: 20px;
+            float: left;
+            color: #ffffff;
+            border: 1px solid green;
+            box-sizing: border-box;
+            background: url('http://img1.3lian.com/img2013/1/33/d/61.jpg') no-repeat;
+            background-size: cover;
+        }
+    
+        section:after {
+            content: "";
+            display: block;
+            clear: both;
+            margin-bottom: 20px;
+        }
+    </style>
+    
+    <style>
+        .test-1>.box-1 {
+            transform: rotate(0deg);
+        }
+        .test-1>.box-2 {
+            transform: rotate(30deg);
+        }
+        .test-1>.box-3 {
+            transform: rotate(60deg);
+        }
+        .test-1>.box-4 {
+            transform: rotate(90deg);
+        }
+    </style>
+
+    <style>
+        .test-2>.box-1 {
+            transform: translate(20px, 0);
+        }
+        .test-2>.box-2 {
+            transform: translate(0, 20px);
+        }
+        .test-2>.box-3 {
+            transform: translate(-20px, 0);
+        }
+        .test-2>.box-4 {
+            transform: translate(0, -20px);
+        }
+    </style>
+
+    <style>
+
+        .test-3>.box-1 {
+            transform: scale(1);
+        }
+    
+        .test-3>.box-2 {
+            transform: scale(2);
+        }
+    
+        .test-3>.box-3 {
+            transform: scale(0.5);
+        }
+    
+        .test-3>.box-4 {
+            transform: scale(0.5, 1);
+        }
+    </style>
+
+    <style>
+        .test-4>.box-1 {
+            transform: skew(0deg, 0deg);
+        }
+        .test-4>.box-2 {
+            transform: skew(60deg, 0deg);
+        }
+        .test-4>.box-3 {
+            transform: skew(0deg, 60deg);
+        }
+        .test-4>.box-4 {
+            transform: skew(60deg, 60deg);
+        }
+    </style>
+
+    <style>
+        .test-4>.box-1 {
+            transform: skew(0deg, 0deg);
+        }
+    
+        .test-4>.box-2 {
+            transform: skew(60deg, 0deg);
+        }
+    
+        .test-4>.box-3 {
+            transform: skew(0deg, 60deg);
+        }
+    
+        .test-4>.box-4 {
+            transform: skew(60deg, 60deg);
+        }
+    </style>
+
+    <style>
+        .test-5>.box-1 {
+            transform: rotate3d(1,0,0,30deg);
+            /* 等价于 */
+            transform: rotateX(30deg);
+        }
+    
+        .test-5>.box-2 {
+            transform: rotate3d(0,1,0,30deg);
+            /* 等价于 */
+            transform: rotateY(30deg);
+        }
+    
+        .test-5>.box-3 {
+            transform: rotate3d(0,0,1,30deg);
+            /* 等价于 */
+            transform: rotateZ(30deg);
+            /* transform: rotate(30deg); */
+        }
+    
+        .test-5>.box-4 {
+            /* 等价于 */
+            transform: rotateX(30deg) rotateY(60deg) rotateZ(30deg);
+        }
+    </style>
+
+    <style>
+        .test-6>.box-1 {
+            position: relative;
+            background: #000000;
+        }
+        .test-6>.box-1>p:nth-of-type(1) {
+            position: absolute;
+            right: 0;
+            width: 100px;
+            background: #333333;
+        }
+        .test-6>.box-1>p:nth-of-type(2) {
+            position: absolute;
+            right: 0;
+            width: 70px;
+            background: #999999;
+            transform: translateZ(4);
+            /* z-index: 3; */
+        }
+        .test-6>.box-1>p:nth-of-type(3) {
+            position: absolute;
+            right: 0;
+            width: 40px;
+            background: #eeeeee;
+        }
+
+        .test-6>.box-2 {
+            transform: translate3d(10px, 0, 0);
+        }
+        .test-6>.box-3 {
+            transform: translate3d(0, 10px, 0);
+        }
+        .test-6>.box-4 {
+            transform: translate3d(0, 0, 10px);
+        }
+    </style>
+
+    <style>
+        .test-7>.box-1 {
+            transform-origin: 0px 0px;
+            transform: rotate(30deg);
+        }
+        .test-7>.box-2 {
+            transform-origin: 0px 0px;
+            transform: rotate(60deg);
+        }
+        .test-7>.box-3 {
+            transform-origin: 0px 0px;
+            transform: rotate(90deg);
+        }
+        .test-7>.box-4 {
+            transform-origin: 0px 0px;
+            transform: rotate(120deg);
+        }
+    </style>
+
+    <style>
+        /* 
+            matrix(a, b, c, d, tx, ty);
+            [ a, c, tx ]   [ x ]   [ ax, cy, tx]
+            [ b, d, ty ] x [ y ] = [ bx, dy, ty]
+            [ 0, 0, 1  ]   [ 1 ]   [ 0,  0,  1 ]
+
+            x = ax + cy + tx;
+            y = bx + dy + ty;
+
+            参考: http://www.zhangxinxu.com/wordpress/2012/06/css3-transform-matrix-矩阵/
+         */
+        .test-8>.box-1 {
+            transform: matrix(1, 0, 0, 1, 30, 30);
+            /* 等价于 */
+            transform: translate(30px, 30px);
+        }
+        .test-8>.box-2 {
+            transform: matrix(0.5, 0, 0, 2, 0, 0);
+            /* 等价于 */
+            transform: scale(0.5, 2);
+        }
+        .test-8>.box-3 {
+            /* matrix(cos(θ), sin(θ), -sin(θ), cos(θ), 0, 0) */
+            transform: matrix(.7071, .7071, -0.7071, .7071, 0, 0);
+            /* 等价于 */
+            transform: scale(45deg);
+        }
+        .test-8>.box-4 {
+            /* matrix(1, tan(θy), tan(θx), 1, 0, 0)  */
+            transform: matrix(1, 0.5773, 0.5773, 1, 0, 0);
+            /* 等价于 */
+            transform: skew(30deg, 30deg);
+        }
+        .test-8>.box-5 {
+            /* 镜像
+                matrix(a, b, c, d)  
+                    a = (1-k*k)/(k*k+1);
+                    b = 2k/(k*k+1);
+                    c = 2k/(k*k+1);
+                    d = (k*k-1)/(k*k+1);
+            */
+            transform: matrix(0, 1, 1, 0, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    <section class="test-1">
+        <summary>rotate(旋转)</summary>
+        <div class="box-1">Box-1(0deg)</div>
+        <div class="box-2">Box-2(30deg)</div>
+        <div class="box-3">Box-3(60deg)</div>
+        <div class="box-4">Box-4(90deg)</div>
+    </section>
+
+    <section class="test-2">
+        <summary>translate(移动)</summary>
+        <div class="box-1">Box-1</div>
+        <div class="box-2">Box-2</div>
+        <div class="box-3">Box-3</div>
+        <div class="box-4">Box-4</div>
+    </section>
+
+    <section class="test-3">
+        <summary>scale(缩放)</summary>
+        <div class="box-1">Box-1</div>
+        <div class="box-2">Box-2</div>
+        <div class="box-3">Box-3</div>
+        <div class="box-4">Box-4</div>
+    </section>
+
+    <section class="test-4">
+        <summary>skew(斜拉)</summary>
+        <div class="box-1">Box-1</div>
+        <div class="box-2">Box-2</div>
+        <div class="box-3">Box-3</div>
+        <div class="box-4">Box-4</div>
+    </section>
+
+    <section class="test-5">
+        <summary>rotate(3D旋转)</summary>
+        <div class="box-1">Box-1</div>
+        <div class="box-2">Box-2</div>
+        <div class="box-3">Box-3</div>
+        <div class="box-4">Box-4</div>
+    </section>
+
+    <section class="test-6">
+        <summary>translate(3D移动)</summary>
+        <div class="box-1">
+            <p>A</p>
+            <p>B</p>
+            <p>C</p>
+        </div>
+        <div class="box-2">Box-2</div>
+        <div class="box-3">Box-3</div>
+        <div class="box-4">Box-4</div>
+    </section>
+
+    <section class="test-7">
+        <summary>设置中心点</summary>
+        <div class="box-1">Box-1</div>
+        <div class="box-2">Box-2</div>
+        <div class="box-3">Box-3</div>
+        <div class="box-4">Box-4</div>
+    </section>
+
+    <section class="test-8">
+        <summary>matrix(矩阵)</summary>
+        <div class="box-1">Box-1</div>
+        <div class="box-2">Box-2</div>
+        <div class="box-3">Box-3</div>
+        <div class="box-4">Box-4</div>
+        <div class="box-5">Box-5</div>
+    </section>
+
+</body>
+</html>

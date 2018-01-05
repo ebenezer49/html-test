@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS3 实现图片切换</title>
+    <link rel="stylesheet" type="text/css" href="./css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./css/layout.css">
+    <link rel="stylesheet" type="text/css" href="./css/demo1.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sliding Image Panels with CSS3</h1>
+            <ul>
+                <li class="active"><a href="index.html">Demo1</a></li>
+                <li><a href="index.html">Demo2</a></li>
+                <li><a href="index.html">Demo3</a></li>
+                <li><a href="index.html">Demo4</a></li>
+            </ul>
+        </header>
+
+        <section class="cr-container">
+            <input id="select-img-1" type="radio" name="radio-set" checked>
+            <label for="select-img-1">1</label>
+            <input id="select-img-2" type="radio" name="radio-set">
+            <label for="select-img-2">2</label>
+            <input id="select-img-3" type="radio" name="radio-set">
+            <label for="select-img-3">3</label>
+            <input id="select-img-4" type="radio" name="radio-set">
+            <label for="select-img-4">4</label>
+
+            <div class="cr-bgimg">
+                <div>
+                    <span>Slice 1 - Image 1</span>
+                    <span>Slice 1 - Image 2</span>
+                    <span>Slice 1 - Image 3</span>
+                    <span>Slice 1 - Image 4</span>
+                </div>
+
+                <div>
+                    <span>Slice 2 - Image 1</span>
+                    <span>Slice 2 - Image 2</span>
+                    <span>Slice 2 - Image 3</span>
+                    <span>Slice 2 - Image 4</span>
+                </div>
+
+                <div>
+                    <span>Slice 3 - Image 1</span>
+                    <span>Slice 3 - Image 2</span>
+                    <span>Slice 3 - Image 3</span>
+                    <span>Slice 3 - Image 4</span>
+                </div>
+
+                <div>
+                    <span>Slice 4 - Image 1</span>
+                    <span>Slice 4 - Image 2</span>
+                    <span>Slice 4 - Image 3</span>
+                    <span>Slice 4 - Image 4</span>
+                </div>
+            </div>
+
+            <div class="cr-title">
+                <h3>
+                    <span>Serendipity</span>
+                    <span>What you've been dreaming of</span>
+                </h3>
+                <h3>
+                    <span>Adventure</span>
+                    <span>Where the fun begins</span>
+                </h3>
+                <h3>
+                    <span>Nature</span>
+                    <span>Unforgettable eperiences</span>
+                </h3>
+                <h3>
+                    <span>Serenity</span>
+                    <span>When silence touches nature</span>
+                </h3>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

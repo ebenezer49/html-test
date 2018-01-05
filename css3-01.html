@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>css3-01</title>
+    <style type="text/css">
+        div {
+            margin: 30px;
+        }
+
+        /* 下一个兄弟p节点 */
+        /*#eight+p {color: red;}*/
+
+        /* 所有后面的同级p节点 */
+        /*#eight~p {color: red;}*/
+
+        /* 包含id属性的所有p节点 */
+        /*p[id] {color: red;}*/
+
+        /* name中以div开头 的p节点 */
+        /*p[name^=div] {color: red;}*/
+
+        /* name中以01结尾的p节点 */
+        /*p[name$='01'] {color: red;}*/
+
+        /* name中包含p0的p节点 */
+        /*p[name*='p0'] {color: red;}*/
+
+        /* 选择空标签 */
+       /* p:empty {
+            width: 100px;
+            height: 40px;
+            background: red;
+        }*/
+
+        /* 选择target节点 */
+        /*p:target {
+            color: red;
+            background: green;
+        }*/
+
+        /* name不以p开头的节点 */
+        /*p:not([name^='p']) {color: red;}*/
+
+        /* 更改用户选择时的样式 */
+        /**::selection {color: red; background: #eee;};*/
+
+        /* 第一个p标签 */
+        /*p:first-of-type {color: red;}*/
+
+        /* 最后一个p标签 */
+        /*p:last-of-type {color: red;}*/
+
+        /* 如果p是其父元素唯一的p标签则被选中*/
+        /*p:only-of-type {color: red;}*/
+
+        /* 如果p是其父元素唯一的p标签且是独一的子元素则被选中 */
+        /*p:only-child {color: red;}*/
+
+        /* 是其父元素的第二个元素的p标签 */
+        /*p:nth-child(2) {color: red;}*/
+
+        /* 是其父元素的倒数第二个元素的p标签 */
+        /*p:nth-last-child(2) {color: red;}*/
+
+        /* 其父元素的第二个p元素 */
+        /*p:nth-of-type(2) {color: red;}*/
+
+        /* 是其父元素的倒数第二个元素的p标签 */
+        /*p:nth-last-of-type(2) {color: red;}*/
+
+        /* 等价于 nth-child(1) */
+        /*p:first-child {color: red;}*/
+
+        /* 等价于 nth-last-child(1) */
+        /*p:last-child {color: red;}*/
+    </style>
+</head>
+<body>
+    <a href="#one">到1</a>
+    <a href="#eight">到8</a>
+    <p id="one" name="p01">P-01</p>
+    <!-- <h1>hehe</h1> -->
+    <p name="p02">P-02</p>
+    <p name="p03">P-03</p>
+    <p name="p04">P-04</p>
+    <p name="p05"></p>
+    <p name="p06">P-06</p>
+    <p name="p07">P-07</p>
+    <p id="eight" name="p08">P-08</p>
+    <p name="p09">P-09</p>
+    <p name="p10">P-10</p>
+    <p name="p11">P-11</p>
+    <p name="p12">P-12</p>
+    <div>
+        <span>span-01</span>
+        <p name="div-p01">div>p-01</p>
+        <p name="div-p02">div>p-02</p>
+        <p name="div-p03">div>p-03</p>
+    </div>
+    <div>
+        <span>span-01</span>
+        <p>div>p-01</p>
+    </div>
+</body>
+</html>

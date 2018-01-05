@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Z-index</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #content {
+            width: 1000px;
+            /*height: 550px;*/
+            border: 2px solid blue;
+            margin: 0 auto;
+            padding: 10px;
+        }
+        #content .first {
+            width: 100%;
+            height: 200px;
+            border: 2px solid yellow;
+            position: relative;
+            z-index: 2;
+        }
+
+        #content .first .c1 {
+            width: 200px;
+            height: 400px;
+            background-color: #333;
+            position: absolute;
+            left: 250px;
+            z-index: 20;
+        }
+
+        #content .second {
+            width: 100%;
+            height: 300px;
+            border: 2px solid red;
+            position: relative;
+            z-index: 5;
+        }
+
+        #content .second .c1 {
+            width: 600px;
+            height: 200px;
+            background-color: #777;
+            position: absolute;
+            z-index: 10;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="content">
+        <div class="first">
+            <div class="c1"></div>
+        </div>
+        <div class="second">
+            <div class="c1"></div>
+        </div>
+    </div>
+</body>
+</html>

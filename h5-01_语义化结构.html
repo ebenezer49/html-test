@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>h5-01</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #header {
+            width: 900px;
+            height: 120px;
+            background: #EFEFEF;
+            margin: 10px auto;
+        }
+
+        #navigation {
+            width: 900px;
+            height: 40px;
+            background: #EFEFEF;
+            margin: 10px auto;
+        }
+
+        #main {
+            width: 900px;
+            height: 500px;
+            margin: 10px auto;
+        }
+
+        #main #aside {
+            width: 200px;
+            height: 500px;
+            background: #EFEFEF;
+            float: left;
+        }
+
+        #main #article {
+            width: 690px;
+            height: 500px;
+            float: right;
+            background: #EFEFEF;
+            text-align: center;
+        }
+
+        #footer {
+            width: 900px;
+            height: 100px;
+            background: #EFEFEF;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部 -->
+    <header id="header">header</header>
+    <!-- 头部结束 -->
+
+    <!-- 导航栏 -->
+    <nav id="navigation">navigation</nav>
+    <!-- 导航栏结束 -->
+
+    <!-- 内容区 -->
+    <div id="main">
+        <!-- 侧边栏 -->
+        <aside id="aside">
+            aside <br>
+            省份选择:
+            <select>
+                <optgroup label="辽宁省">
+                    <option>沈阳</option>
+                    <option>大连</option>
+                </optgroup>
+                <optgroup label="四川省">
+                    <option>成都</option>
+                    <option>绵阳</option>
+                </optgroup>
+            </select><br>
+
+            进度条:
+            <progress value="21" max="100"></progress><br>
+
+            刻度:
+            <meter value="3" min="0" max="10"></meter><br>
+        </aside>
+        <!-- 侧边栏结束 -->
+
+        <!-- 文章 -->
+        <article id="article">
+            article
+            <h1>文章标题</h1>
+            <time datetime="2017-04-01T14:00:00Z" datetime>2017-04-01 15:06:00</time>
+            <section>
+                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容<ins>ins(新插入部分)</ins><del>del(已删除部分)</del><br>
+                <mark>mark 代码:</mark><br>
+                <code>
+                    window.onload = function() {
+                        /* 加载后执行的代码 */
+                    }
+                </code>
+            </section>
+        </article>
+        <!-- 文章结束 -->
+    </div>
+    <!-- 内容区结束 -->
+
+    <!-- 内嵌页面 -->
+    <article>
+        <h1>内嵌页面</h1>
+        <object width="700" height="300">
+            <embed src="#">
+        </object>
+    </article>
+    <!-- 内嵌页面结束 -->
+
+    <!-- 底栏 -->
+    <footer id="footer">
+        footer
+        <address>成都市武侯区</address>
+    </footer>
+    <!-- 底栏结束 -->
+</body>
+</html>

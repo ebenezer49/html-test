@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>导航效果</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #777;
+        }
+
+        #nav {
+            width: 800px;
+            height: 800px;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        #nav a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        #nav .main-item, .sub-item {
+            width: 100px;
+            height: 100px;
+            border: 3px solid #fff;
+            border-radius: 50%;
+            position: absolute;
+            text-align: center;
+            line-height: 100px;
+            font-size: 32px;
+            transition: 1.5s;
+            top: 350px;
+            left: 350px;
+        }
+
+        #nav .main-item:hover, .sub-item:hover {
+            transform: rotate(360deg);
+        }
+
+        #nav .main-item {
+            background: #0f5;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var nav = document.getElementById('nav');
+            var mainItem = nav.querySelector('.main-item');
+            var subItems = nav.querySelectorAll('.sub-item');
+
+            // 设置 sub-item 的样式
+            var color = 100;
+            for (let i = 0; i < subItems.length; i ++) {
+                subItems[i].style.background = '#' + (color + i*100)
+            }
+
+            var expend = false;
+            var radius = 150;   // (px)
+            mainItem.onclick = function(event) {
+                var mainItemStyle = document.defaultView.getComputedStyle(mainItem, null);
+                var mainItemX = parseFloat(mainItemStyle.left);
+                var mainItemY = parseFloat(mainItemStyle.top);
+
+                // 扩展
+                if (!expend) {
+                    var perRadian = (360.0 / subItems.length) * Math.PI / 180 ;
+                    for (let i = 0; i < subItems.length; i ++) {
+                        var left = Math.cos(i * perRadian) * radius + mainItemX;
+                        var top = Math.sin(i * perRadian) * radius + mainItemY;
+                        console.log(`expend [${i}(${top}, ${left})]`);
+                        subItems[i].style.top = top + 'px';
+                        subItems[i].style.left = left + 'px';
+                    }
+                    expend = true;
+
+                // 收缩
+                } else {
+                    for (let i = 0; i < subItems.length; i ++) {
+                        var left = mainItemX;
+                        var top = mainItemY;
+                        console.log(`[${i}(${top}, ${left})]`);
+                        subItems[i].style.top = top + 'px';
+                        subItems[i].style.left = left + 'px';
+                    }
+                    expend = false;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <nav id="nav">
+        <div class="sub-item"><a href="javascript:void(0)">01</a></div>
+        <div class="sub-item"><a href="javascript:void(0)">02</a></div>
+        <div class="sub-item"><a href="javascript:void(0)">03</a></div>
+        <div class="sub-item"><a href="javascript:void(0)">04</a></div>
+        <div class="sub-item"><a href="javascript:void(0)">05</a></div>
+        <div class="sub-item"><a href="javascript:void(0)">06</a></div>
+        <div class="sub-item"><a href="javascript:void(0)">07</a></div>
+        <div class="main-item"><a href="javascript:void(0)">菜单</a></div>
+    </nav>
+</body>
+</html>

@@ -1,0 +1,147 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #fff;
+    font-family: 'Avenir Next', 'Lantinghei SC';
+    font-size: 14px;
+}
+
+
+.wrap {
+    width: 100%;
+    height: 600px;
+    position: absolute;
+
+    /*-------------------下面两行实现了垂直居中-------------
+    top:50%;
+    margin-top:-300px;
+
+    /*----------下面这四行也是实现垂直居中的一种方式-----------------*/
+    top:0;
+    bottom:0;
+    margin-top:auto;
+    margin-bottom:auto;
+    /*------------------------------------------------------------*/
+    overflow: hidden;
+    background-color: #eee;
+    /* 设置元素被查看位置的视图 3D */
+    perspective: 500;
+    -webkit-perspective: 500;
+    -moz-perspective: 500;
+}
+
+/* 照片 */
+.photo {
+    width: 280px;
+    height: 320px;
+    position: absolute;
+    z-index: 1;
+    transition: all 1.5s;
+    cursor: pointer;
+}
+
+.photo .photo-wrap {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+    /* 使元素支持3D效果 */
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+
+    transition: all 1.5s;
+}
+
+.photo .side {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    border: 20px solid #fff;
+    box-sizing: border-box;
+    box-shadow: 0 0 7px rgba(0,0,0,0.3);
+    /* 元素不面向屏幕时 隐藏 */
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transition: all 1.5s;
+}
+
+/* 照片-正面 */
+.photo .side-front {}
+
+.photo .side-front .image {
+    width: 100%;
+    height: 240px;
+    line-height: 240px;
+    overflow: hidden;
+}
+
+.photo .side-front .image img {
+    width: 100%;
+}
+
+.photo .side-front .caption {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(167, 160, 162);
+    margin-top: 20px;
+}
+
+/* 照片-背面 */
+.photo .side-back {transform: rotateY(180deg);}
+
+.photo .side-back .desc{
+    text-align: center;
+    font-size: 14px;
+    color: rgb(167, 160, 162);
+}
+
+/* 照片-居中 */
+.photo-center {
+    top: 50%;
+    left: 50%;
+    margin-top: -160px;
+    margin-left: -140px;
+    z-index: 2;
+}
+
+.photo-wrap {transform-origin: 0 50%;}
+.photo-back .photo-wrap {transform: translate(280px, 0px) rotateY(180deg);}
+.photo-front .photo-wrap {transform: translate(0px, 0px) rotateY(0deg);}
+
+
+/* 导航条 */
+.controler {
+    width: 80%;
+    position: absolute;
+    left: 10%;
+    bottom: 10px;
+    z-index: 3;
+    text-align: center;
+}
+
+.controler .controler-unit{
+    display: inline-block;
+    width: 30px;
+    color: #fff;
+    text-align: center;
+    font-size: 21px;
+    line-height: 30px;
+    margin-left: 10px;
+    border-radius: 50%;
+    background-color: #333;
+    cursor: pointer;
+    transform: scale(0.6);
+    transition: all 1.5s;
+}
+
+.controler .controler-curent {
+    transform: scale(1);
+}

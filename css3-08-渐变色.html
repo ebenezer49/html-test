@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>css3-08</title>
+    <style type="text/css">
+        div[class^="box"] {
+            width: 140px;
+            height: 70px;
+            margin: 7px;
+            padding: 20px;
+            float: left;
+            color: #ffffff;
+            /* border: 20px solid rgba(255,255,255,.9); */
+        }
+        section:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+    </style>
+
+    <style>
+        .test-1>.box-1 {
+            /* 默认从上到下 */
+            background: linear-gradient(#000000, #ffffff); 
+        }
+        .test-1>.box-2 {
+            background: linear-gradient(to right, #000000, #ffffff);
+        }
+        .test-1>.box-3 {
+            background: linear-gradient(to right bottom, #000000, #ffffff);
+        }
+    </style>
+
+    <style>
+        .test-2>.box-1 {
+            background: linear-gradient(0deg, #000000, #ffffff);
+        }
+        .test-2>.box-2 {
+            background: linear-gradient(30deg, #000000, #ffffff);
+        }
+        .test-2>.box-3 {
+            background: linear-gradient(60deg, #000000, #ffffff);
+        }
+        .test-2>.box-4 {
+            background: linear-gradient(90deg, #000000, #ffffff);
+        }
+        .test-2>.box-5 {
+            background: linear-gradient(120deg, #000000, #ffffff);
+        }
+        .test-2>.box-6 {
+            background: linear-gradient(150deg, #000000, #ffffff);
+        }
+        .test-2>.box-7 {
+            background: linear-gradient(180deg, #000000, #ffffff);
+        }
+    </style>
+
+    <style>
+        .test-3>.box-1 {
+            /* 默认等比例分部颜色 即 0%的位置为黑色 到25%的位置为红色 到50%为绿色 到75%为蓝色 到100%为黑色 */
+            background: linear-gradient(to right, #000000, #ff0000, #00ff00, #0000ff, #ffffff);
+        }
+        .test-3>.box-2 {
+            background: linear-gradient(to right, #000000 0%, #ff0000 10%, #00ff00 80%, #0000ff 90%, #ffffff 100%);
+        }
+        .test-3>.box-3 {
+            background: linear-gradient(to right, #000000 20%, #ff0000 30%, #00ff00 80%, #0000ff 85%, #ffffff 90%);
+        }
+    </style>
+
+    <style>
+        .test-4>.box-1 {
+            background: repeating-linear-gradient(to right, #000000, #ffffff);
+        }
+        .test-4>.box-2 {
+            background: repeating-linear-gradient(to right, #000000 0%, #ffffff 20%);
+        }
+    
+        .test-4>.box-3 {
+            background: repeating-linear-gradient(to right, #000000 0%, #ffffff 20%, #ffffff 40%, #000000 50%);
+        }
+    </style>
+
+    <style>
+        .test-5>.box-1 {
+            background: radial-gradient(#000000, #ffffff);
+        }
+        .test-5>.box-2 {
+            background: radial-gradient(circle, #000000, #ffffff);
+        }
+        .test-5>.box-3 {
+            background: -webkit-radial-gradient(20% 70%, circle, #000000, #ffffff);
+        }
+        .test-5>.box-4 {
+            background: -webkit-radial-gradient(20% 70%, closest-side circle, #000000, #ffffff);
+        }
+        .test-5>.box-5 {
+            background: -webkit-radial-gradient(20% 70%, farthest-side circle, #000000, #ffffff);
+        }
+        .test-5>.box-6 {
+            background: -webkit-radial-gradient(20% 70%, closest-corner circle, #000000, #ffffff);
+        }
+        .test-5>.box-7 {
+            background: -webkit-radial-gradient(20% 70%, farthest-corner circle, #000000, #ffffff);
+        }
+    </style>
+
+    <style>
+        .test-6>.box-1 {
+            background: repeating-radial-gradient(circle, #000000, #ffffff);
+        }
+        .test-6>.box-2 {
+            background: repeating-radial-gradient(circle, #000000, #ffffff 20%);
+        }
+        .test-6>.box-3 {
+            background: repeating-radial-gradient(circle, #000000, #ffffff 20%, #000000 30%);
+        }
+    </style>
+
+    <style>
+        .test-7>.box-1 {
+            /* 从0% 到25%为红色 25%-100%为透明 */
+            background-image: linear-gradient(45deg, red 25%, transparent 25%);
+        }
+        .test-7>.box-2 {
+            background-image: linear-gradient(45deg, red 25%, transparent 25%),
+                        linear-gradient(-45deg, yellow 25%, transparent 25%),
+                        linear-gradient(45deg, transparent 75%, green 75%),
+                        linear-gradient(-45deg, transparent 75%, blue 75%);
+        }
+        .test-7>.box-3 {
+            background-image: linear-gradient(45deg, red 25%, transparent 25%),
+                        linear-gradient(-45deg, yellow 25%, transparent 25%),
+                        linear-gradient(45deg, transparent 75%, green 75%),
+                        linear-gradient(-45deg, transparent 75%, blue 75%);
+            background-size: 20% 20%;
+        }
+    </style>
+</head>
+<body>
+    <section class="test-1">
+        <summary>线性渐变</summary>
+        <div class="box-1">Box-1(上到下)</div>
+        <div class="box-2">Box-2(左到右)</div>
+        <div class="box-3">Box-3(左上到右下)</div>        
+    </section>
+
+    <section class="test-2">
+        <summary>线性渐变(角度)</summary>
+        <div class="box-1">Box-1(0deg)</div>
+        <div class="box-2">Box-2(30deg)</div>
+        <div class="box-3">Box-3(60deg)</div>
+        <div class="box-4">Box-4(90deg)</div>
+        <div class="box-5">Box-5(120deg)</div>
+        <div class="box-6">Box-6(150deg)</div>
+        <div class="box-7">Box-7(180deg)</div>
+    </section>circle
+
+    <section class="test-3">
+        <summary>线性渐变(多色)</summary>
+        <div class="box-1">Box-1</div>
+        <div class="box-2">Box-2</div>
+        <div class="box-3">Box-3</div>
+    </section>
+
+    <section class="test-4">
+        <summary>线性渐变(重复渐变)</summary>
+        <div class="box-1">Box-1</div>
+        <div class="box-2">Box-2</div>
+        <div class="box-3">Box-3</div>
+    </section>
+
+    <section class="test-5">
+        <summary>径向渐变</summary>
+        <div class="box-1">Box-1(椭圆)</div>
+        <div class="box-2">Box-2(圆形)</div>
+        <div class="box-3">Box-3(改变中心点)</div>
+        <div class="box-4">Box-4</div>
+        <div class="box-5">Box-5</div>
+        <div class="box-6">Box-6</div>
+        <div class="box-7">Box-7</div>
+    </section>
+
+    <section class="test-6">
+        <summary>径向渐变(重复渐变)</summary>
+        <div class="box-1">Box-1</div>
+        <div class="box-2">Box-2</div>
+        <div class="box-3">Box-3</div>
+    </section>
+
+    <section class="test-7">
+        <summary>案例</summary>
+        <div class="box-1">Box-1</div>
+        <div class="box-2">Box-2</div>
+        <div class="box-3">Box-3</div>
+    </section>
+
+</body>
+</html>

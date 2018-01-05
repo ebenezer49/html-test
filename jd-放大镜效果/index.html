@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jd</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #preview {
+            width: 450px;
+            height: 450px;
+            margin-top: 200px;
+            position: relative;
+            border: 1px solid #eee;
+        }
+
+        #preview .sShow {
+            width: 450px;
+            height: 450px;
+            cursor: move;
+            position: relative;
+        }
+
+        #preview .sShow .selectBox {
+            display: none;
+            background: yellow;
+            position: absolute;
+            opacity: 0.5;
+        }
+
+        #preview .sShow .cover {
+            width: 100%;
+            height: 100%;
+            background: black;
+            opacity: 0.4;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #preview .bShow {
+            display: none;
+            width: 500px;
+            height: 500px;
+            position: absolute;
+            border: 1px solid #eee;
+            top: 0;
+            left: 450px;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function() {
+            var previewDom = document.getElementById('preview');
+            var sShowW, sShowH, sShowDom = previewDom.querySelector('.sShow');
+            var sBoxW, sBoxH, sBoxDom = previewDom.querySelector('.selectBox');
+            var bShowW, bShowH, bShowDom = previewDom.querySelector('.bShow');
+            var sImg;
+            var bImgW, bImgH, bImg;
+
+            // debugger;
+
+            init();
+
+            function init() {
+                sImg = '01-small.jpg';
+                bImg = '01-big.jpg';
+
+                sShowW = 450;
+                sShowH = 450;
+
+                bShowW = 500;
+                bShowH = 500;
+
+                // 检测图片大小
+                fatchImgSize(bImg, (image) => {
+                    bImgW = image.width;
+                    bImgH = image.height;
+
+                    sBoxW = sShowW * bShowW / bImgW;
+                    sBoxH = sShowH * bShowH / bImgH;
+
+                    // 选择块
+                    sBoxDom.style.width = sBoxW + 'px';
+                    sBoxDom.style.height = sBoxH + 'px';
+                });
+
+                // 细节显示部分
+                bShowDom.style.background = `url(${bImg}) no-repeat`;
+            }
+
+            function selectMove(posX, posY) {
+                var sBoxX, sBoxY;
+                var bShowBgX, bShowBgY;
+
+                // 先计算黄盒子的位置
+                if (posX < sBoxW / 2) {
+                    sBoxX = sBoxW / 2;
+                } else if (posX > sShowW - (sBoxW/2)) {
+                    sBoxX = sShowW - (sBoxW/2);
+                } else {
+                    sBoxX = posX;
+                }
+
+                if (posY < sBoxH / 2) {
+                    sBoxY = sBoxH / 2;
+                } else if (posY > sShowH - (sBoxH/2)) {
+                    sBoxY = sShowH - (sBoxH/2);
+                } else {
+                    sBoxY = posY;
+                }
+
+                // 移动黄盒子
+                sBoxDom.style.left = sBoxX - (sBoxW/2) + 'px';
+                sBoxDom.style.top = sBoxY - (sBoxH/2) + 'px';
+
+                // 再计算大盒子背景图的位置
+                var scaleX = bShowW / sBoxW;
+                var scaleY = bShowH / sBoxH;
+                bShowBgX = sBoxX * scaleX;
+                bShowBgY = sBoxY * scaleY;
+
+                // 移动右侧大盒子的背景图位置
+                bShowDom.style.backgroundPosition = `-${bShowBgX-(bShowW/2)}px -${bShowBgY-(bShowH/2)}px`;
+
+            }
+
+            function fatchImgSize(path, callBack) {
+                var image = new Image();
+                image.src = path;
+                image.onload = () => {
+                    callBack(image);
+                }
+            }
+
+            sShowDom.onmouseover = function(event) {
+                console.log('sShowDom.onmouseover');
+                bShowDom.style.display = 'block';
+                sBoxDom.style.display = 'block';
+            }
+
+            sShowDom.onmouseout = function(event) {
+                bShowDom.style.display = 'none';
+                sBoxDom.style.display = 'none';
+            }
+
+            sShowDom.onmousemove = function(event) {
+                // console.log(`${event.layerX}, ${event.layerY}`);
+                selectMove(event.layerX, event.layerY);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="preview">
+        <div class="sShow">
+            <div class="selectBox"></div>
+            <img src="01-small.jpg">
+            <div class="cover"></div>   <!-- 遮盖层(mousemove 事件的防止抖动)-->
+        </div>
+
+        <div class="bShow"></div>
+    </div>
+</body>
+</html>

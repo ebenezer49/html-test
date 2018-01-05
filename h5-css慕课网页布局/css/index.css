@@ -1,0 +1,263 @@
+/* 头部 */
+
+.body-header {
+    background-color: #000000;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.body-header:after {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    content: "";
+    height: 7px;
+    background-color: #d6d6d6;
+}
+
+.body-header>.container {
+    position: relative;
+    margin: 0 auto;
+    width: 1200px;
+    height: 80px;
+}
+
+.body-header>.container>a {
+    display: inline-block;
+    margin: 5px 25px;
+    width: 198px;
+    height: 66px;
+}
+
+.body-header>.container>nav {
+    float: right;
+    font-size: 0;
+}
+
+.body-header>.container>nav>a {
+    display: inline-block;
+    width: 110px;
+    height: 72px;
+    color: #ffffff;
+    font-size: 24px;
+    text-align: center;
+    line-height: 72px;
+}
+
+.body-header>.container>nav>a:hover,
+.body-header>.container>nav>a.active {
+    height: 80px;
+}
+
+.body-header>.container>nav>a:nth-child(1) {
+    background-color: #433b90;
+}
+
+.body-header>.container>nav>a:nth-child(2) {
+    background-color: #017fcb;
+}
+
+.body-header>.container>nav>a:nth-child(3) {
+    background-color: #78b917;
+}
+
+.body-header>.container>nav>a:nth-child(4) {
+    background-color: #feb800;
+}
+
+.body-header>.container>nav>a:nth-child(5) {
+    background-color: #f27c01;
+}
+
+.body-header>.container>nav>a:nth-child(6) {
+    background-color: #d40112;
+}
+
+
+/* banner */
+
+.banner {
+    position: relative;
+    height: 540px;
+    margin: 0 auto;
+    background-color: #eaeaea;
+    /* overflow: hidden; */
+}
+
+.banner:after {
+    display: block;
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 7px;
+    background-color: #d6d6d6;
+}
+
+.banner>ul {
+    position: relative;
+    width: 1490px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.banner>ul>li.right,
+.banner>ul>li.left {
+    position: absolute;
+    top: 50%;
+    width: 610px;
+    z-index: 1;
+    height: 300px;
+    transform: translate(0, -50%);
+    box-shadow: 0 3px 7px 0 rgba(0, 0, 0, .35);
+}
+
+.banner>ul>li.left {
+    left: 0;
+}
+
+.banner>ul>li.right {
+    right: 0;
+}
+
+.banner>ul>li.active {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 960px;
+    height: 460px;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    border: 1px solid #fff;
+    box-shadow: 0 30px 140px 22px rgba(0, 0, 0, .35)
+}
+
+.banner>ul>li>a>img {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* 主体 */
+
+.main {
+    position: relative;
+    overflow: hidden;
+}
+
+.main>.container {
+    width: 1200px;
+    margin: 34px auto;
+    clear: both;
+}
+
+.main>.container>.recent-course {
+    float: left;
+    width: 450px;
+}
+
+.main>.container>.recent-course>h1 {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 24px;
+    color: #000000;
+}
+
+.main>.container>.recent-course>h1>samp {
+    color: #7c7c7c;
+}
+
+.main>.container>.recent-course>dl {
+    position: relative;
+    width: 100%;
+    height: 74px;
+    margin-bottom: 16px;
+}
+
+.main>.container>.recent-course>dl>dt {
+    position: absolute;
+    top: 0;
+    left: 92px;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.main>.container>.recent-course>dl>dd:nth-of-type(2) {
+    position: absolute;
+    top: 18px;
+    left: 92px;
+    width: 360px;
+    max-height: 45px;
+    font-size: 14px;
+    overflow: hidden;
+    /* word-break: break-all; */
+    /* text-overflow: ellipsis; */
+}
+
+.main>.container>.content {
+    float: right;
+    width: 720px;
+    overflow: hidden;
+}
+
+.main>.container>.content>h1 {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 24px;
+    color: #000000;
+}
+
+.main>.container>.content>h1>samp {
+    color: #7c7c7c;
+}
+
+.main>.container>.content>p {
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.main:after {
+    position: absolute;
+    bottom: 0;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 7px;
+    background-color: #d6d6d6;
+}
+
+
+/* 底部 */
+
+.body-footer {
+    background-color: #000000;
+}
+
+.body-footer>.container {
+    width: 1200px;
+    height: 64px;
+    margin: 0 auto;
+}
+
+.body-footer>.container>.copyright {
+    float: left;
+    line-height: 64px;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.body-footer>.container>.share {
+    float: right;
+    margin: 16px 40px;
+}
+
+.body-footer>.container>.share>a>img {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.body-footer>.container>.share>a>img:hover {
+    opacity: 1;
+}

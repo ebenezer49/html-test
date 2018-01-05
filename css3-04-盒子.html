@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>css3-04</title>
+    <style type="text/css">
+        #div-01 {
+            width: 70%;
+            height: 150px;
+            background: blue;
+            margin: 10px auto;
+            min-width: 400px;
+            max-width: 700px;
+        }
+
+        #div-02 {
+            height: 120px;
+            margin-top: 10px;
+        }
+
+        #div-02>div {
+            width: 25%;
+            height: 50px;
+            background: #777;
+            border: 5px solid #333;
+            float: left;
+        }
+
+        #div-03 {
+            margin-top: 10px;
+            height: 120px;
+        }
+
+        #div-03>div {
+            width: 25%;
+            height: 50px;
+            background: #777;
+            border: 5px solid #333;
+            float: left;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div id="div-01"></div>
+
+    <div id="div-02">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div id="div-03">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BoxShadow</title>
+
+    <style>
+        div[class^="test"] {
+            padding: 20px;
+        }
+        div[class^="test"]:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+    </style>
+
+    <style>
+        .test-1>div[class^="box"] {
+            width: 100px;
+            height: 70px;
+            float: left;
+            background-color: #ff0000;
+            margin: 30px;
+            text-align: center;
+            line-height: 70px;
+            color: #ffffff;
+        }
+        .test-1>.box-1 {
+            box-shadow: 5px 20px 0 0 #000000; 
+        }
+        .test-1>.box-2 {
+            box-shadow: 5px 20px 20px 0 #000000; 
+        }
+        .test-1>.box-3 {
+            box-shadow: 5px 20px 0 10px #000000; 
+        }
+        .test-1>.box-4 {
+            box-shadow: 5px 20px 0 0 #000000 inset; 
+        }
+    </style>
+
+    <style>
+        .test-2>div[class^="box"] {
+            width: 200px;
+            height: 180px;
+            margin: 10px;
+            background-image: url('http://pic2.nipic.com/20090416/2048681_121230009_2.jpg');
+            float: left;
+        }
+        .box-1 {
+
+        }
+        .box-2 {
+            box-shadow: 40px 20px 100px 0 #000000 inset;
+        }
+        .box-3 {
+            box-shadow: 200px 100px 100px 0 #000000 inset;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-1">
+        <div class="box-1">
+            Box-1
+        </div>
+        <div class="box-2">
+            Box-2
+        </div>
+        <div class="box-3">
+            Box-3
+        </div>
+        <div class="box-4">
+            Box-4
+        </div>
+    </div>
+
+    <div class="test-2">
+        <div class="box-1">
+            Box-1
+        </div>
+        <div class="box-2">
+            Box-2
+        </div>
+        <div class="box-3">
+            Box-3
+        </div>
+    </div>
+</body>
+</html>
